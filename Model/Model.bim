@@ -1,0 +1,1370 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "en-GB",
+    "dataSources": [
+      {
+        "name": "SqlServer 192.168.8.239 IrisNetSD_HPL",
+        "connectionString": "Provider=SQLNCLI11;Data Source=192.168.8.239;Persist Security Info=true;User ID=turza;Initial Catalog=IrisNetSD_HPL",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "PBI_4P_T",
+        "columns": [
+          {
+            "name": "PRS_ID",
+            "dataType": "string",
+            "sourceColumn": "PRS_ID",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SHOP_ID",
+            "dataType": "string",
+            "sourceColumn": "SHOP_ID",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "CDATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "PDATE",
+            "dataType": "dateTime",
+            "sourceColumn": "PDATE",
+            "formatString": "General Date",
+            "sourceProviderType": "DBDate"
+          },
+          {
+            "name": "PRS_TYPE",
+            "dataType": "string",
+            "sourceColumn": "PRS_TYPE",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PSC_SLNO",
+            "dataType": "string",
+            "sourceColumn": "PSC_SLNO",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PHY_ID",
+            "dataType": "string",
+            "sourceColumn": "PHY_ID",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PHY_NM",
+            "dataType": "string",
+            "sourceColumn": "PHY_NM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PHY_DEGR",
+            "dataType": "string",
+            "sourceColumn": "PHY_DEGR",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "PHY_SPC",
+            "dataType": "string",
+            "sourceColumn": "PHY_SPC",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "VC2_1",
+            "dataType": "string",
+            "sourceColumn": "VC2_1",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "UNIT_PRC",
+            "dataType": "string",
+            "sourceColumn": "UNIT_PRC",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ING",
+            "dataType": "string",
+            "sourceColumn": "ING",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "NAME1",
+            "dataType": "string",
+            "sourceColumn": "NAME1",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "QT_PRS",
+            "dataType": "string",
+            "sourceColumn": "QT_PRS",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "HLCMPO",
+            "dataType": "string",
+            "sourceColumn": "HLCMPO",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AM",
+            "dataType": "string",
+            "sourceColumn": "AM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RM",
+            "dataType": "string",
+            "sourceColumn": "RM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ASM",
+            "dataType": "string",
+            "sourceColumn": "ASM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SM",
+            "dataType": "string",
+            "sourceColumn": "SM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MPO_TM",
+            "dataType": "string",
+            "sourceColumn": "MPO_TM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AM_TM",
+            "dataType": "string",
+            "sourceColumn": "AM_TM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MPO_NM",
+            "dataType": "string",
+            "sourceColumn": "MPO_NM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "AM_NM",
+            "dataType": "string",
+            "sourceColumn": "AM_NM",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CH_ADD",
+            "dataType": "string",
+            "sourceColumn": "CH_ADD",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CH_DIST",
+            "dataType": "string",
+            "sourceColumn": "CH_DIST",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CH_THA",
+            "dataType": "string",
+            "sourceColumn": "CH_THA",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "INSTCD",
+            "dataType": "string",
+            "sourceColumn": "INSTCD",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DIAGNAME",
+            "dataType": "string",
+            "sourceColumn": "DIAGNAME",
+            "sourceProviderType": "Char"
+          },
+          {
+            "type": "calculated",
+            "name": "ZoneCode",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LEFT([RM],3)"
+          },
+          {
+            "type": "calculated",
+            "name": "Division Name",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": [
+              " ",
+              "SWITCH(",
+              "    TRUE(),",
+              "    [ASM] = \"D01\", \"Credence Division\",",
+              "    [ASM] = \"D02\", \"Division-B\",",
+              "    [ASM] = \"D03\", \"Division-C\",",
+              "    [ASM] = \"D04\", \"Division-A\",",
+              "    [ASM] = \"D07\", \"Division-D\",",
+              "     [ASM] = \"D05\", \"Elililly-Division\",",
+              "    BLANK())"
+            ]
+          },
+          {
+            "type": "calculated",
+            "name": "RegionCode",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": "LEFT([AM],4)"
+          },
+          {
+            "type": "calculated",
+            "name": "Business_Nature",
+            "dataType": "string",
+            "isDataTypeInferred": true,
+            "expression": [
+              "IF(",
+              "\tAND(",
+              "\t\tLEFT(PBI_4P_T[MPO_TM],3) = \"VIS\", PBI_4P_T[Division Name] in {\"Division-A\", \"Division-B\", \"Division-C\", \"Division-D\"}), ",
+              "\t\t\"Saffron\", ",
+              "\t\t IF(",
+              "\t\t \tPBI_4P_T[Division Name] in {\"Credence Division\", \"Elililly-Division\"}, ",
+              "\t\t \tPBI_4P_T[Division Name],",
+              "\t\t\t\"General\"",
+              "\t\t)",
+              ")"
+            ]
+          },
+          {
+            "type": "calculated",
+            "name": "PRS_VAL",
+            "dataType": "double",
+            "isDataTypeInferred": true,
+            "expression": "PBI_4P_T[QT_PRS] * PBI_4P_T[UNIT_PRC]"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PBI_4P_T",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[PBI_4P_T].* FROM [dbo].[PBI_4P_T] ",
+              "dataSource": "SqlServer 192.168.8.239 IrisNetSD_HPL"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PBI_4P_T].* FROM [dbo].[PBI_4P_T] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PBI_4P_T"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "PBI_Market_master_t",
+        "columns": [
+          {
+            "name": "NationalCode",
+            "dataType": "string",
+            "sourceColumn": "NationalCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ZoneCode",
+            "dataType": "string",
+            "sourceColumn": "ZoneCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RegeionCode",
+            "dataType": "string",
+            "sourceColumn": "RegeionCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MarketId",
+            "dataType": "int64",
+            "sourceColumn": "MarketId",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "MarketCode",
+            "dataType": "string",
+            "sourceColumn": "MarketCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Market",
+            "dataType": "string",
+            "sourceColumn": "Market",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "EmployeeId",
+            "dataType": "int64",
+            "sourceColumn": "EmployeeId",
+            "sourceProviderType": "BigInt"
+          },
+          {
+            "name": "EmployeeCode",
+            "dataType": "string",
+            "sourceColumn": "EmployeeCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SAPEmpCode",
+            "dataType": "string",
+            "sourceColumn": "SAPEmpCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FullName",
+            "dataType": "string",
+            "sourceColumn": "FullName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FatherName",
+            "dataType": "string",
+            "sourceColumn": "FatherName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DesignationCode",
+            "dataType": "string",
+            "sourceColumn": "DesignationCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "JoiningDate",
+            "dataType": "dateTime",
+            "sourceColumn": "JoiningDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "ConfirmedDate",
+            "dataType": "dateTime",
+            "sourceColumn": "ConfirmedDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "MarketJoiningDate",
+            "dataType": "dateTime",
+            "sourceColumn": "MarketJoiningDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "PromotionDate",
+            "dataType": "dateTime",
+            "sourceColumn": "PromotionDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "CellPhone",
+            "dataType": "string",
+            "sourceColumn": "CellPhone",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "BloodGroup",
+            "dataType": "string",
+            "sourceColumn": "BloodGroup",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Sorting",
+            "dataType": "string",
+            "sourceColumn": "Sorting",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SAPMarketCode",
+            "dataType": "string",
+            "sourceColumn": "SAPMarketCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "SAPDepotCode",
+            "dataType": "string",
+            "sourceColumn": "SAPDepotCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Creator",
+            "dataType": "string",
+            "sourceColumn": "Creator",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CcreationDate",
+            "dataType": "dateTime",
+            "sourceColumn": "CcreationDate",
+            "formatString": "General Date",
+            "sourceProviderType": "DBTimeStamp"
+          },
+          {
+            "name": "NatonalName",
+            "dataType": "string",
+            "sourceColumn": "NatonalName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ZoneName",
+            "dataType": "string",
+            "sourceColumn": "ZoneName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "RegeionName",
+            "dataType": "string",
+            "sourceColumn": "RegeionName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MarketName",
+            "dataType": "string",
+            "sourceColumn": "MarketName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "BatchNo",
+            "dataType": "string",
+            "sourceColumn": "BatchNo",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DivisionCode",
+            "dataType": "string",
+            "sourceColumn": "DivisionCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "DivisionName",
+            "dataType": "string",
+            "sourceColumn": "DivisionName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "OwnerEmpName",
+            "dataType": "string",
+            "sourceColumn": "OwnerEmpName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Business_Type",
+            "dataType": "string",
+            "sourceColumn": "Business_Type",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "MarketTeam",
+            "dataType": "string",
+            "sourceColumn": "MarketTeam",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PBI_Market_master_t",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[PBI_Market_master_t].* FROM [dbo].[PBI_Market_master_t] ",
+              "dataSource": "SqlServer 192.168.8.239 IrisNetSD_HPL"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PBI_Market_master_t].* FROM [dbo].[PBI_Market_master_t] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PBI_Market_master_t"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "CalendarTable",
+        "columns": [
+          {
+            "type": "calculatedTableColumn",
+            "name": "Date",
+            "dataType": "dateTime",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Date]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Year",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Year]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Month Number",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Month Number]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Month Name",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Month Name]",
+            "sortByColumn": "Month Number"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Year-Month",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Year-Month]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Weekday",
+            "dataType": "int64",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Weekday]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Weekday Name",
+            "dataType": "string",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Weekday Name]"
+          },
+          {
+            "type": "calculatedTableColumn",
+            "name": "Is Weekend",
+            "dataType": "boolean",
+            "isNameInferred": true,
+            "isDataTypeInferred": true,
+            "sourceColumn": "[Is Weekend]",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\""
+          }
+        ],
+        "partitions": [
+          {
+            "name": "CalculatedTable 1",
+            "source": {
+              "type": "calculated",
+              "expression": [
+                "",
+                "ADDCOLUMNS(",
+                "    CALENDAR(DATE(2022, 1, 1), DATE(2032, 12, 31)),",
+                "    \"Year\", YEAR([Date]),",
+                "    \"Month Number\", MONTH([Date]),",
+                "    \"Month Name\", FORMAT([Date], \"MMMM\"),",
+                "    \"Year-Month\", FORMAT([Date], \"YYYY-MM\"),",
+                "    \"Weekday\", WEEKDAY([Date]),",
+                "    \"Weekday Name\", FORMAT([Date], \"dddd\"),",
+                "    \"Is Weekend\", IF(WEEKDAY([Date], 2) > 5, TRUE(), FALSE())",
+                ")"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "name": "PBI_Zone_User_T",
+        "columns": [
+          {
+            "name": "ZoneCode",
+            "dataType": "string",
+            "sourceColumn": "ZoneCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "ZoneName",
+            "dataType": "string",
+            "sourceColumn": "ZoneName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "EmployeeCode",
+            "dataType": "string",
+            "sourceColumn": "EmployeeCode",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "UserName",
+            "dataType": "string",
+            "sourceColumn": "UserName",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Name",
+            "dataType": "string",
+            "sourceColumn": "Name",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "PBI_Zone_User_T",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " SELECT [dbo].[PBI_Zone_User_T].* FROM [dbo].[PBI_Zone_User_T] ",
+              "dataSource": "SqlServer 192.168.8.239 IrisNetSD_HPL"
+            },
+            "annotations": [
+              {
+                "name": "TableWidgetSerialization",
+                "value": [
+                  "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>\r",
+                  "<TableWidgetGridSerialization xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r",
+                  "  <ColumnSuggestedType />\r",
+                  "  <ColumnFormat />\r",
+                  "  <ColumnAccuracy />\r",
+                  "  <ColumnCurrencySymbol />\r",
+                  "  <ColumnPositivePattern />\r",
+                  "  <ColumnNegativePattern />\r",
+                  "  <ColumnWidths>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>ZoneCode</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>98</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>ZoneName</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>101</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>EmployeeCode</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>127</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>UserName</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>97</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>Name</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>70</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "  </ColumnWidths>\r",
+                  "  <ColumnDisplayIndex>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>ZoneCode</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>0</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>ZoneName</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>1</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>EmployeeCode</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>2</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>UserName</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>3</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "    <item>\r",
+                  "      <key>\r",
+                  "        <string>Name</string>\r",
+                  "      </key>\r",
+                  "      <value>\r",
+                  "        <int>4</int>\r",
+                  "      </value>\r",
+                  "    </item>\r",
+                  "  </ColumnDisplayIndex>\r",
+                  "  <ColumnFrozen />\r",
+                  "  <ColumnChecked />\r",
+                  "  <ColumnFilter />\r",
+                  "  <SelectionFilter />\r",
+                  "  <FilterParameters />\r",
+                  "  <IsSortDescending>false</IsSortDescending>\r",
+                  "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+                ]
+              }
+            ]
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " SELECT [dbo].[PBI_Zone_User_T].* FROM [dbo].[PBI_Zone_User_T] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "PBI_Zone_User_T"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          },
+          {
+            "name": "TableWidgetSerialization",
+            "value": [
+              "<?xml version=\"1.0\" encoding=\"UTF-16\"?><Gemini xmlns=\"TableWidgetSerialization\"><AnnotationContent><![CDATA[<?xml version=\"1.0\"?>\r",
+              "<TableWidgetGridSerialization xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\">\r",
+              "  <ColumnSuggestedType />\r",
+              "  <ColumnFormat />\r",
+              "  <ColumnAccuracy />\r",
+              "  <ColumnCurrencySymbol />\r",
+              "  <ColumnPositivePattern />\r",
+              "  <ColumnNegativePattern />\r",
+              "  <ColumnWidths>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>ZoneCode</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>98</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>ZoneName</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>101</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>EmployeeCode</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>127</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>UserName</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>97</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>Name</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>70</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "  </ColumnWidths>\r",
+              "  <ColumnDisplayIndex>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>ZoneCode</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>0</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>ZoneName</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>1</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>EmployeeCode</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>2</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>UserName</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>3</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "    <item>\r",
+              "      <key>\r",
+              "        <string>Name</string>\r",
+              "      </key>\r",
+              "      <value>\r",
+              "        <int>4</int>\r",
+              "      </value>\r",
+              "    </item>\r",
+              "  </ColumnDisplayIndex>\r",
+              "  <ColumnFrozen />\r",
+              "  <ColumnChecked />\r",
+              "  <ColumnFilter />\r",
+              "  <SelectionFilter />\r",
+              "  <FilterParameters />\r",
+              "  <IsSortDescending>false</IsSortDescending>\r",
+              "</TableWidgetGridSerialization>]]></AnnotationContent></Gemini>"
+            ]
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "51b96a62-7007-4df4-86ab-78fefc8a8066",
+        "fromTable": "PBI_4P_T",
+        "fromColumn": "CDATE",
+        "toTable": "CalendarTable",
+        "toColumn": "Date"
+      },
+      {
+        "name": "e4993977-5948-408e-9ac5-7c2cfd11772e",
+        "fromTable": "PBI_Market_master_t",
+        "fromColumn": "ZoneCode",
+        "toTable": "PBI_Zone_User_T",
+        "toColumn": "ZoneCode"
+      },
+      {
+        "name": "cd2032da-c40f-4cbb-83bd-57f1eb9fcb20",
+        "fromTable": "PBI_4P_T",
+        "fromColumn": "HLCMPO",
+        "toTable": "PBI_Market_master_t",
+        "toColumn": "MarketCode"
+      }
+    ],
+    "roles": [
+      {
+        "name": "anirban",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\anirban.mitra",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-10519"
+          }
+        ]
+      },
+      {
+        "name": "rashed",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\rashed.karim",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-10844"
+          }
+        ]
+      },
+      {
+        "name": "aminul",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\aminul",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1137"
+          }
+        ]
+      },
+      {
+        "name": "faiyaz",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\faiyaz.islam",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-10415"
+          }
+        ]
+      },
+      {
+        "name": "faisal",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\faisalahmed",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1268"
+          }
+        ]
+      },
+      {
+        "name": "reyashat",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\reyashat",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1224"
+          }
+        ]
+      },
+      {
+        "name": "noor",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\noor",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1208"
+          }
+        ]
+      },
+      {
+        "name": "rezoan",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\rezoan",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1211"
+          }
+        ]
+      },
+      {
+        "name": "atik",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\atik",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1217"
+          }
+        ]
+      },
+      {
+        "name": "abu",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\faisal.khan",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1688"
+          }
+        ]
+      },
+      {
+        "name": "kazi",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\khreza",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1223"
+          }
+        ]
+      },
+      {
+        "name": "rahat",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\rahat",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1133"
+          }
+        ]
+      },
+      {
+        "name": "istiak",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\ishtiaque",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1130"
+          }
+        ]
+      },
+      {
+        "name": "bhupati",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\bkroy",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1615"
+          }
+        ]
+      },
+      {
+        "name": "Shahreer",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\shahreaar.ekram",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-9838"
+          }
+        ]
+      },
+      {
+        "name": "Ashik",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\mdasiqur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1947"
+          }
+        ]
+      },
+      {
+        "name": "Ripa",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\farzanaripa",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1271"
+          }
+        ]
+      },
+      {
+        "name": "Sajibain",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\sajib.saha",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1659"
+          }
+        ]
+      },
+      {
+        "name": "MM",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\mmnoor.hossain",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1903"
+          }
+        ]
+      },
+      {
+        "name": "ZoneRoles",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\reza",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1159"
+          },
+          {
+            "memberName": "HPL\\aktarruzzaman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1158"
+          },
+          {
+            "memberName": "HPL\\mohdzakaria",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1855"
+          },
+          {
+            "memberName": "HPL\\rezaul.hasan",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1304"
+          },
+          {
+            "memberName": "HPL\\salauddin.ansary",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1305"
+          },
+          {
+            "memberName": "HPL\\mizanur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1695"
+          },
+          {
+            "memberName": "HPL\\zahid.anowar",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1696"
+          },
+          {
+            "memberName": "HPL\\rezaulkarim",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1157"
+          },
+          {
+            "memberName": "HPL\\mahbubur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1303"
+          },
+          {
+            "memberName": "HPL\\mdkawser.sarker",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1885"
+          },
+          {
+            "memberName": "HPL\\shahinur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1773"
+          },
+          {
+            "memberName": "HPL\\artezaur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1685"
+          },
+          {
+            "memberName": "HPL\\atmrabiul.islam",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1849"
+          },
+          {
+            "memberName": "HPL\\mynul.islam",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1876"
+          },
+          {
+            "memberName": "HPL\\emdad",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1161"
+          },
+          {
+            "memberName": "HPL\\rafiqul.sarker",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1687"
+          },
+          {
+            "memberName": "HPL\\mdboarhan.uddin",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1912"
+          },
+          {
+            "memberName": "HPL\\kazidaud",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1163"
+          },
+          {
+            "memberName": "HPL\\mahmudul.islam",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1302"
+          },
+          {
+            "memberName": "HPL\\mdkhasru.miah",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1913"
+          },
+          {
+            "memberName": "HPL\\akm.hasanuzzaman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1799"
+          },
+          {
+            "memberName": "HPL\\abdulquddus",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1147"
+          },
+          {
+            "memberName": "HPL\\raju.ahmed",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1842"
+          },
+          {
+            "memberName": "HPL\\smalauddin",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1168"
+          },
+          {
+            "memberName": "HPL\\mdbakul.akter",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1901"
+          },
+          {
+            "memberName": "HPL\\mozammel",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1165"
+          },
+          {
+            "memberName": "HPL\\shamsuddin",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1156"
+          },
+          {
+            "memberName": "HPL\\na.masud",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1709"
+          },
+          {
+            "memberName": "HPL\\ferdous.ali",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1697"
+          },
+          {
+            "memberName": "HPL\\syedataur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1917"
+          },
+          {
+            "memberName": "HPL\\abu.nyum",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1703"
+          },
+          {
+            "memberName": "HPL\\Kamruzzaman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1279"
+          },
+          {
+            "memberName": "HPL\\rabiul",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1776"
+          },
+          {
+            "memberName": "HPL\\alamgir.hossain",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1865"
+          },
+          {
+            "memberName": "HPL\\mdnazmul.hussain",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1891"
+          },
+          {
+            "memberName": "HPL\\arfanuddin",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1160"
+          },
+          {
+            "memberName": "HPL\\ajoy.chowdhury",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1928"
+          },
+          {
+            "memberName": "HPL\\harun.rashid",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1748"
+          },
+          {
+            "memberName": "HPL\\jahirul.jewel",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1710"
+          },
+          {
+            "memberName": "HPL\\ziauddin",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1164"
+          },
+          {
+            "memberName": "HPL\\rabiul.alam",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1686"
+          },
+          {
+            "memberName": "HPL\\debabrata.mandal",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1714"
+          },
+          {
+            "memberName": "HPL\\biswajit.roy",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1306"
+          },
+          {
+            "memberName": "HPL\\jamal.khan",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1739"
+          },
+          {
+            "memberName": "HPL\\mdmoklesur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-2712"
+          },
+          {
+            "memberName": "HPL\\jalal.uddin",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1738"
+          },
+          {
+            "memberName": "HPL\\ibrahim.khan",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1691"
+          },
+          {
+            "memberName": "HPL\\mdmahfuzul.islam",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1815"
+          },
+          {
+            "memberName": "HPL\\rakibul.hasan",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-2735"
+          },
+          {
+            "memberName": "HPL\\mdhasibul.hasan",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1850"
+          },
+          {
+            "memberName": "HPL\\humayun.kabir",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1753"
+          },
+          {
+            "memberName": "HPL\\atiur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1713"
+          },
+          {
+            "memberName": "HPL\\ulfatul.alam",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1820"
+          },
+          {
+            "memberName": "HPL\\motiur.rahman",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1785"
+          },
+          {
+            "memberName": "HPL\\qasmanwar.hossain",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1853"
+          }
+        ],
+        "tablePermissions": [
+          {
+            "name": "PBI_Zone_User_T",
+            "filterExpression": "PBI_Zone_User_T[UserName]=USERNAME()"
+          }
+        ]
+      },
+      {
+        "name": "Mitali",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\mitali",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1213"
+          }
+        ]
+      },
+      {
+        "name": "anuj",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\anuj.karmakar",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-7415"
+          }
+        ]
+      },
+      {
+        "name": "HasanReza",
+        "modelPermission": "read",
+        "members": [
+          {
+            "memberName": "HPL\\khreza",
+            "memberId": "S-1-5-21-3888890667-3814149108-105243143-1223"
+          }
+        ]
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}
